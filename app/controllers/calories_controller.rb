@@ -4,6 +4,7 @@ class CaloriesController < ApplicationController
   # GET /calories or /calories.json
   def index
     @calories = Calorie.where('user_id = (?)', current_user.id).order(updated_at: :desc).page(params[:page])
+    @total_records = @calories.size
   end
 
   # GET /calories/1 or /calories/1.json

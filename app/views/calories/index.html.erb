@@ -1,7 +1,7 @@
-
-
-<h1>Calories</h1>
-
+<div class="d-flex justify-content-center align-items-center">
+    <h1 class="p-2 flex-grow-1">Calories</h1>
+    <h4 class="p-2"><%= pluralize(@total_records, "record")%></h4>
+</div>
 <div id="calories" class="container row row-cols-4">
   <% @calories.each do |calory| %>
   <div class="col card text-white <%= calory.is_burned ? "bg-success" : "bg-danger" %> mb-3 border" style="max-width: 18rem;">
