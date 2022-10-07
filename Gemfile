@@ -81,3 +81,5 @@ gem "ransack", "~> 3.2"
 gem "chartkick", "~> 4.2"
 
 gem "groupdate", "~> 6.1"
+
+gem "annotate", "~> 3.2"
