@@ -4,8 +4,8 @@ class CaloriesController < ApplicationController
   before_action :correct_user, only: %i[show edit update destroy]
   # GET /calories or /calories.json
   def index
+    @total_records = Calorie.where(user_id: current_user.id).count
     @calories = Calorie.where('user_id = (?)', current_user.id).order(updated_at: :desc).page(params[:page])
-    @total_records = @calories.size
   end
 
   # GET /calories/1 or /calories/1.json

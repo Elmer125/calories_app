@@ -77,3 +77,7 @@ gem "kaminari", "~> 1.2"
 gem "devise", "~> 4.8"
 
 gem "ransack", "~> 3.2"
+
+gem "chartkick", "~> 4.2"
+
+gem "groupdate", "~> 6.1"
