@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :calories
-  validates_presence_of :name
+  validates_presence_of :name, length: { minimum: 5, maximum: 40 }
 end

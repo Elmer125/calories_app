@@ -1,6 +1,7 @@
 class CaloriesController < ApplicationController
   before_action :set_calory, only: %i[show edit update destroy]
   before_action :authenticate_user!
+  before_action :correct_user, only: %i[show edit update destroy]
   # GET /calories or /calories.json
   def index
     @calories = Calorie.where('user_id = (?)', current_user.id).order(updated_at: :desc).page(params[:page])
@@ -67,5 +68,10 @@ class CaloriesController < ApplicationController
   def calory_params
     # params.require(:calory).permit(:calories_number, :is_burned, :doing_what)
     params.require(:calorie).permit(:calories_number, :is_burned, :doing_what)
+  end
+
+  def correct_user
+    @calories = Calorie.find(params[:id]).user_id == current_user.id
+    redirect_to calories_path, alert: 'User Not Authorized' unless @calories
   end
 end

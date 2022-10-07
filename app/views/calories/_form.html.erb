@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :calories_number, style: "display: block" %>
-    <%= form.number_field :calories_number %>
+    <%= form.number_field :calories_number, required: true %>
   </div>
 
   <div>
@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :doing_what, style: "display: block" %>
-    <%= form.text_area :doing_what %>
+    <%= form.text_area :doing_what, required: true %>
   </div>
 
   <div>

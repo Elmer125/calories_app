@@ -1,0 +1,14 @@
+<h1 class="text-center"><%= pluralize(@calories.count, "Result") %></h1>
+
+<div class="container row row-cols-4">
+  <% @calories.each do |calory| %>
+    <div class="col card text-white <%= calory.is_burned ? "bg-success" : "bg-danger" %> mb-3 border" style="max-width: 18rem;">
+      <div class="card-header"><%= calory.updated_at.strftime("%F %T")  %></div>
+      <div class="card-body">
+        <%= render calory %>
+        <%= link_to "Show this calorie", calory, class:"btn btn-warning" %>
+      </div>
+    </div>
+  <% end %>
+  <%= paginate @calories %>
+</div>
