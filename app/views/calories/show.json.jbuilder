@@ -1,1 +1,1 @@
-json.partial! "calories/calory", calory: @calory
+json.partial! 'calories/calory', calory: @calory
